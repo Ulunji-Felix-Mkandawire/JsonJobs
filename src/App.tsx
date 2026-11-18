@@ -1,5 +1,20 @@
+import {
+  Route,
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router";
+import BaseLayout from "./layouts/BaseLayout";
+
 const App = () => {
-  return <div>App</div>;
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<BaseLayout />}>
+        {/* <Route /> */}
+      </Route>,
+    ),
+  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;
